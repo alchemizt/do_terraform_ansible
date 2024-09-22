@@ -1,0 +1,11 @@
+- name: HestiaCP Installer
+  hosts: all
+  tasks:
+    - name: Print initial state
+      debug: 
+      msg: "Starting configuration tasks on {{ inventory_hostname }}: 
+    - name: "Install HestiaCP"
+      debug:
+        msg: "HestiaCP is installed"
+      when: hestiacp_installed is not defined
+      include_tasks: tasks/main.yml

@@ -1,0 +1,11 @@
+node_modules 
+*.env 
+.env* 
+*.local
+terraform.tfstate
+terrarform.tfstate.backup
+terraform.tfvars
+meta/
+.terraform
+hosts.yaml
+terraform.lock.hcl

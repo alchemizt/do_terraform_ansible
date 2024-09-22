@@ -1,0 +1,23 @@
+ all:
+   hosts:
+     server1:
+       ansible_port: 22
+       ansible_host: 11.11.11.11
+       ansible_ssh_private_key_file: ~/.ssh/terraform
+       ansible_ssh_user: root
+       vars:
+        hestia_admin_mail: user@domain.com
+        hestia_admin_pw: password
+      server_hostname: hcp.domain.com
+      port: 2083
+      hestia_install_flags:
+        apache: "yes"
+        phpfpm: "yes"
+        multiphp: "yes"
+      hestia_additional_php:
+      - "7.4"
+      - "8.0"
+      - "8.2"
+    hestia_generate_ssl: true
+    hestia_timeout_install: 3600
+    hestia_poll_interval_install: 10
