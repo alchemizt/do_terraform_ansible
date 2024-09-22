@@ -3,9 +3,10 @@
   tasks:
     - name: Print initial state
       debug: 
-      msg: "Starting configuration tasks on {{ inventory_hostname }}: 
-    - name: "Install HestiaCP"
+        msg: "Starting configuration tasks on {{ inventory_hostname }}:"
+    - name: Install HestiaCP
       debug:
         msg: "HestiaCP is installed"
       when: hestiacp_installed is not defined
-      include_tasks: tasks/main.yml
+    - include_tasks: tasks/main.yml
+      when: hestiacp_installed is not defined
